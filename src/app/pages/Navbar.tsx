@@ -48,7 +48,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/about"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
               NOSOTROS
             </Link>
           </li>
