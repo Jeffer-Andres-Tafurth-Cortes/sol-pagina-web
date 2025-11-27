@@ -85,6 +85,15 @@
   line-height: 1.6;
 }
 
+.link {
+  margin-top: 14px;
+  display: inline-block;
+  color: #1a414a;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
 .card:hover .link {
   color: #f7c600;
 }

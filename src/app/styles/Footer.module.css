@@ -31,12 +31,13 @@
 
 .ctaButton {
   border: 2px solid #ffffff;
-  color: white;
+  color: #1a411a;
   padding: 12px 26px;
   font-size: 14px;
   letter-spacing: 1px;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .ctaButton:hover {
@@ -93,7 +94,6 @@
   font-size: 14px;
   margin-bottom: 8px;
   color: #d0d0d0;
-  cursor: pointer;
   transition: color 0.2s ease;
 }
 

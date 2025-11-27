@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const handleClick = () => {
   window.open(
-    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
     "_blank"
   );
 };

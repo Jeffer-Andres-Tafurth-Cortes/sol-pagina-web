@@ -2,7 +2,7 @@
 
 const handleClick = () => {
   window.open(
-    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
     "_blank"
   );
 };
@@ -12,10 +12,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebookF,
-  faYoutube,
+  faTiktok,
   faLinkedinIn,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLocationDot,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -29,9 +34,9 @@ export default function Footer() {
           </span>
         </h2>
 
-        <a href="#contacto" className={styles.ctaButton}>
-          CONTÁCTANOS
-        </a>
+        <button className={styles.ctaButton} onClick={handleClick}>
+          PROGRAME UNA CITA
+        </button>
       </div>
 
       {/* CONTENIDO PRINCIPAL */}
@@ -47,16 +52,30 @@ export default function Footer() {
           <h4 className={styles.heading}>REDES SOCIALES</h4>
 
           <div className={styles.socials}>
-            <a className={styles.socialLink}>
+            <a
+              className={styles.socialLink}
+              href="https://www.instagram.com/pravice_abogados/"
+            >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a className={styles.socialLink}>
+            <a
+              className={styles.socialLink}
+              href="https://www.facebook.com/praviceabogadosespecializados"
+            >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a className={styles.socialLink}>
-              <FontAwesomeIcon icon={faYoutube} />
+            <a
+              className={styles.socialLink}
+              href="https://www.tiktok.com/@pravice_abogados"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <FontAwesomeIcon icon={faTiktok} />
             </a>
-            <a className={styles.socialLink}>
+            <a
+              className={styles.socialLink}
+              href="https://co.linkedin.com/company/praviceabogadosespecializados"
+            >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
@@ -92,9 +111,17 @@ export default function Footer() {
         {/* CONTACTO */}
         <div className={styles.col}>
           <h4 className={styles.heading}>DETALLES DE CONTACTO</h4>
-          <p className={styles.text}>📍 Calle 98 no. 22 - 64 Oficina 716</p>
-          <p className={styles.text}>📞 +57 323 290 4786</p>
-          <p className={styles.text}>✉ comercial@solcentrodeconciliacion.com</p>
+          <p className={styles.text}>
+            <FontAwesomeIcon icon={faLocationDot} /> Calle 98 no. 22 - 64
+            Oficina 716
+          </p>
+          <p className={styles.text}>
+            <FontAwesomeIcon icon={faPhone} /> +57 323 290 4786
+          </p>
+          <p className={styles.text}>
+            <FontAwesomeIcon icon={faEnvelope} />{" "}
+            comercial@solcentrodeconciliacion.com
+          </p>
         </div>
 
         {/* HORARIO */}

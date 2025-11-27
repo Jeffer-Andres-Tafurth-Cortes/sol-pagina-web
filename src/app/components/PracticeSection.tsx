@@ -74,7 +74,6 @@ export default function PracticeSection() {
             </div>
             <h3 className={styles.cardTitle}>{area.title}</h3>
             <p className={styles.cardDesc}>{area.desc}</p>
-            <span className={styles.link}>Saber más →</span>
           </div>
         ))}
       </div>
