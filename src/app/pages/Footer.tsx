@@ -38,7 +38,7 @@ export default function Footer() {
       <div className={styles.content}>
         {/* LOGO */}
         <div className={styles.col}>
-          <img src="/logo_sol.png" alt="Logo Sol" className={styles.logo} />
+          <img src="/logo_sol.jpg" alt="Logo Sol" className={styles.logo} />
           <p className={styles.text}>
             En SOL brindamos seguridad jurídica y resolución pacífica de
             conflictos a personas y empresas.

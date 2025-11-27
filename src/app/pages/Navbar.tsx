@@ -32,10 +32,10 @@ export default function Navbar() {
         {/** LOGO */}
         <Link href="/" className={`${styles.logo} ${styles.dark}`}>
           <Image
-            src="/logo-sol.png"
+            src="/logo_sol.jpg"
             alt="Logo Sol"
-            width={85}
-            height={70}
+            width={90}
+            height={90}
             priority
           />
         </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/About" onClick={() => setMenuOpen(false)}>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>
               NOSOTROS
             </Link>
           </li>

@@ -1,0 +1,89 @@
+.section {
+  background-color: #fbf9f2;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* INVERTIDO */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* TEXTO */
+.text {
+  max-width: 500px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 600;
+  color: #123c3f;
+}
+
+.role {
+  font-size: 16px;
+  color: #777;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* BOTON */
+.button {
+  background-color: #123c3f;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0d2e31;
+}
+
+/* IMAGEN */
+.imageBox {
+  width: 380px;
+  height: auto;
+}
+
+.imageBox img {
+  width: 100%;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 900px) {
+  .profile,
+  .reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    gap: 60px;
+    padding: 60px 20px;
+  }
+
+  .imageBox {
+    width: 100%;
+    max-width: 300px;
+  }
+}
