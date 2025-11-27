@@ -32,9 +32,9 @@ export default function Navbar() {
         {/** LOGO */}
         <Link href="/" className={`${styles.logo} ${styles.dark}`}>
           <Image
-            src="/logo_SOL.png"
+            src="/logo-sol.png"
             alt="Logo Sol"
-            width={80}
+            width={85}
             height={70}
             priority
           />
