@@ -1,3 +1,6 @@
+/* =============================
+   SECCIÓN CONTACTO
+============================= */
 .contactSection {
   background: #9b9b9b;
   padding: clamp(40px, 6vw, 80px) 5%;
@@ -6,7 +9,9 @@
   align-items: center;
 }
 
-/* CONTENEDOR */
+/* =============================
+   CONTENEDOR GENERAL
+============================= */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,7 +21,9 @@
   margin: auto;
 }
 
-/* LADO IZQUIERDO */
+/* =============================
+   LADO IZQUIERDO
+============================= */
 .info h2 {
   font-size: clamp(24px, 5vw, 42px);
   color: white;
@@ -30,7 +37,9 @@
   line-height: 1.6;
 }
 
-/* FORMULARIO */
+/* =============================
+   FORMULARIO
+============================= */
 .form {
   background: rgba(255, 255, 255, 0.15);
   padding: clamp(20px, 4vw, 40px);
@@ -44,7 +53,9 @@
   font-size: clamp(16px, 3vw, 22px);
 }
 
-/* INPUTS */
+/* =============================
+   INPUTS
+============================= */
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -72,22 +83,40 @@
   min-height: 120px;
 }
 
-/* CHECKBOX */
+/* =============================
+   CHECKBOX CORREGIDO
+============================= */
 .checkbox {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: clamp(11px, 2.5vw, 13px);
-  margin-top: 12px;
-  line-height: 1.4;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox label {
+  cursor: pointer;
+  user-select: none;
 }
 
 .checkbox a {
-  color: white;
+  color: #ffffff;
   text-decoration: underline;
 }
 
-/* BOTÓN */
+/* =============================
+   BOTÓN
+============================= */
 .ctaButton {
   margin-top: 18px;
   background: white;
@@ -99,14 +128,16 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: clamp(14px, 3vw, 16px);
+  transition: opacity 0.2s ease;
 }
 
 .ctaButton:hover {
   opacity: 0.85;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
-
+/* =============================
+   RESPONSIVE
+============================= */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
@@ -126,7 +157,8 @@
     padding: 18px;
   }
 
-  .checkbox {
-    font-size: 11px;
+  .checkbox input {
+    width: 20px;
+    height: 20px;
   }
 }

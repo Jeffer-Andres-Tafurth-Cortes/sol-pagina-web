@@ -86,7 +86,7 @@ export default function CalculatorSection() {
             resolver tus conflictos de forma pacífica y profesional.
           </p>
 
-          <button className={styles.cta}>Programa una consulta →</button>
+          <button className={styles.cta}>Programe una consulta →</button>
         </div>
       </div>
     </section>
