@@ -1,0 +1,161 @@
+.faqSection {
+  max-width: 1100px;
+  margin: 7rem auto 6rem; /* Más margen superior */
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f5f5f5;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TITULOS
+========================= */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a414a;
+  text-align: center;
+}
+
+.subtitle {
+  margin-bottom: 2.5rem;
+  color: #456b74;
+}
+
+/* =========================
+   ACORDEÓN
+========================= */
+.accordion {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ITEMS */
+.accordionItem {
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid #456b74;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.accordionItem.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+/* BOTÓN */
+.accordionButton {
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a414a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.accordionButton:hover,
+.accordionItem.active .accordionButton {
+  color: #456b74;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.accordionItem.active .icon {
+  transform: rotate(180deg);
+}
+
+/* CONTENIDO */
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  color: #1a414a;
+  box-sizing: border-box;
+}
+
+.accordionContent p {
+  margin: 1rem 0 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .faqSection {
+    max-width: 90vw;
+    margin-top: 9rem; /* más separación en tablets */
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    margin-top: 10rem; /* navbar suele ser más alto aquí */
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .accordionButton {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .accordionContent {
+    padding: 0 1rem;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqSection {
+    margin-top: 11rem; /* SOLUCIÓN para navbar sticky */
+    padding: 0 0.5rem;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .accordionButton {
+    padding: 0.85rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .accordionContent p {
+    font-size: 0.9rem;
+  }
+}
