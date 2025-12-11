@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "../styles/PracticeSection.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,6 +12,8 @@ import {
   faHouse,
   faMoneyBillWave,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { motion } from "framer-motion";
 
 const areas = [
   {
@@ -34,22 +38,22 @@ const areas = [
   },
   {
     title: "Alimentos para Menores",
-    desc: "Asesoría y gestión en procesos legales para garantizar el cumplimiento de la manutención económica de los hijos, cubriendo alimentación, educación y salud.",
+    desc: "Asesoría y gestión en procesos legales para garantizar el cumplimiento de la manutención económica de los hijos.",
     icon: faChild,
   },
   {
     title: "Custodia y Régimen de Visitas",
-    desc: "Orientación en disputas sobre la tenencia de los hijos y la definición de cronogramas que garantizan el derecho de ambos padres a compartir con ellos.",
+    desc: "Orientación en disputas sobre la tenencia de los hijos y cronogramas de visitas.",
     icon: faClipboardList,
   },
   {
     title: "Asuntos Vecinales",
-    desc: "Mediación en problemas de convivencia entre vecinos, uso de espacios comunes, ruidos y cumplimiento de normas comunitarias.",
+    desc: "Mediación en problemas de convivencia entre vecinos, ruidos y normas comunitarias.",
     icon: faUsers,
   },
   {
     title: "Liquidación de Sociedad Conyugal",
-    desc: "Acompañamiento en la distribución equitativa de bienes adquiridos durante el matrimonio, garantizando un cierre justo y transparente.",
+    desc: "Acompañamiento en la distribución justa de bienes adquiridos durante el matrimonio.",
     icon: faHouse,
   },
 ];
@@ -57,26 +61,54 @@ const areas = [
 export default function PracticeSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
+      {/* Encabezado con Fade-Up */}
+      <motion.div
+        className={styles.header}
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <span className={styles.subtitle}>ÁREAS DE PRÁCTICA</span>
         <h2 className={styles.title}>Conciliación Extrajudicial en Derecho</h2>
         <p className={styles.description}>
           En SOL facilitamos soluciones legales y humanas priorizando acuerdos
           eficaces.
         </p>
-      </div>
+      </motion.div>
 
-      <div className={styles.grid}>
+      {/* Grid con Stagger Animation */}
+      <motion.div
+        className={styles.grid}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.12 }}
+      >
         {areas.map((area, index) => (
-          <div key={index} className={styles.card}>
+          <motion.div
+            key={index}
+            className={styles.card}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            whileHover={{
+              y: -6,
+              scale: 1.02,
+              boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+              transition: { duration: 0.25 },
+            }}
+            transition={{ duration: 0.45 }}
+          >
             <div className={styles.icon}>
               <FontAwesomeIcon icon={area.icon} />
             </div>
             <h3 className={styles.cardTitle}>{area.title}</h3>
             <p className={styles.cardDesc}>{area.desc}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

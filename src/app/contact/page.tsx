@@ -2,6 +2,7 @@
 
 import { FormEvent } from "react";
 import styles from "./contact.module.css";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -31,19 +32,16 @@ ${mensaje}
     `;
 
     const mensajeCodificado = encodeURIComponent(texto);
-
     const numeroWhatsApp = "573232904786";
 
-    // Detectar si es móvil
     const esMovil =
       /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
         navigator.userAgent
       );
 
-    // URLs dependiendo del dispositivo
     const url = esMovil
-      ? `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}` // Para móvil (WhatsApp App)
-      : `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`; // Para PC (WhatsApp Web)
+      ? `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`
+      : `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
 
     window.open(url, "_blank");
   };
@@ -51,16 +49,30 @@ ${mensaje}
   return (
     <section className={styles.contactSection}>
       <div className={styles.container}>
-        <div className={styles.info}>
+        {/* Texto izquierdo con fade + desplazamiento suave */}
+        <motion.div
+          className={styles.info}
+          initial={{ opacity: 0, x: -25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2>¿Tienes preguntas o quieres agendar una consulta?</h2>
           <p>
             Escríbenos y con gusto te ayudaremos a planear tu proceso legal con
             nuestros expertos.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Formulario */}
-        <form className={styles.form} onSubmit={handleSubmit}>
+        {/* Formulario con animación independiente */}
+        <motion.form
+          className={styles.form}
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h3>Estamos para ayudarte</h3>
 
           <div className={styles.row}>
@@ -135,10 +147,19 @@ ${mensaje}
             </span>
           </div>
 
-          <button className={styles.ctaButton} type="submit">
+          {/* Botón con hover animado */}
+          <motion.button
+            className={styles.ctaButton}
+            type="submit"
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+            }}
+            whileTap={{ scale: 0.97 }}
+          >
             Enviar
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </div>
     </section>
   );

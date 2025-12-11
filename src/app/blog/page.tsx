@@ -26,46 +26,9 @@ const faqData: BlogItem[] = [
     answer:
       "Objeto y alcance, precio y pagos, plazos de entrega, estándares de calidad, garantías, limitación de responsabilidad, confidencialidad, protección de datos, propiedad intelectual, solución de controversias, terminación anticipada y penalidades por incumplimiento.",
   },
-  {
-    question: "¿Cómo prevenir incumplimientos de pago en relaciones B2B?",
-    answer:
-      "Con verificación de contraparte, términos claros de facturación, garantías reales o personales, cláusulas de intereses y mora, hitos de pago por entregables y procedimientos de cobranza extrajudicial escalonados antes de iniciar un litigio.",
-  },
-  {
-    question: "¿Qué hacer ante un incumplimiento de contrato?",
-    answer:
-      "Recopilar evidencias, revisar cláusulas de aviso y cure period, activar garantías y negociar un acuerdo. Si no hay solución, se acude a conciliación, arbitraje o a la jurisdicción pactada. Documentar cada gestión aumenta la fuerza de tu reclamación.",
-  },
-  {
-    question:
-      "¿Cómo se protegen las marcas y contenidos en un acuerdo comercial?",
-    answer:
-      "Mediante licencias y cesiones por escrito con alcance, territorio y vigencia definidos. Se complementa con cláusulas de confidencialidad, no uso indebido, y mecanismos de verificación y retiro en caso de infracción.",
-  },
-  {
-    question: "¿Qué debe cumplir una tienda en línea a nivel legal?",
-    answer:
-      "Términos y condiciones claros, política de privacidad y datos personales, política de garantías y devoluciones, información veraz de precios y tiempos de envío, y facturación conforme a la normativa aplicable.",
-  },
-  {
-    question: "¿Cómo estructurar acuerdos de distribución o exclusividad?",
-    answer:
-      "Definir territorio, canales, metas mínimas de compra, soporte de marca, estándares de servicio, precios recomendados, niveles de inventario, reportes y causales de terminación. Se valora impacto en competencia y restricciones legales.",
-  },
-  {
-    question: "¿Qué pruebas sirven en un conflicto comercial?",
-    answer:
-      "Contrato y anexos, órdenes de compra, guías de despacho, actas de recepción, correos y chats corporativos, facturas, estados de cuenta, certificaciones de calidad y cualquier registro que evidencie obligación, cumplimiento o perjuicio.",
-  },
-  {
-    question:
-      "¿Puedo pactar ley y jurisdicción aplicables con una empresa extranjera?",
-    answer:
-      "Sí. Es recomendable acordar ley aplicable y sede de solución de controversias. También se puede pactar arbitraje internacional para mayor neutralidad y ejecutabilidad del laudo.",
-  },
 ];
 
-// Variants para el fade-in del contenedor
+// Variants del contenedor
 const containerVariants: Variants = {
   hidden: { opacity: 0, y: 25 },
   show: {
@@ -79,7 +42,7 @@ const containerVariants: Variants = {
   },
 };
 
-// Variants para cada FAQ item
+// Variants de cada item
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: {
@@ -98,7 +61,6 @@ export default function Blog() {
 
   return (
     <section className={styles.faqSection}>
-      {/* HEADER animado */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +73,6 @@ export default function Blog() {
         <h2 className={styles.heading}>PREGUNTAS FRECUENTES</h2>
       </motion.div>
 
-      {/* LISTA ANIMADA */}
       <motion.div
         className={styles.accordion}
         variants={containerVariants}
@@ -127,7 +88,6 @@ export default function Blog() {
             }`}
             variants={itemVariants}
           >
-            {/* Título */}
             <button
               className={styles.accordionButton}
               onClick={() => toggleIndex(index)}
@@ -139,8 +99,7 @@ export default function Blog() {
               </span>
             </button>
 
-            {/* Contenido animado */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               {activeIndex === index && (
                 <motion.div
                   className={styles.accordionContent}
@@ -148,16 +107,14 @@ export default function Blog() {
                   animate={{
                     height: "auto",
                     opacity: 1,
-                    transition: {
-                      duration: 0.35,
-                      ease: [0.16, 1, 0.3, 1],
-                    },
+                    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
                   }}
                   exit={{
                     height: 0,
                     opacity: 0,
                     transition: { duration: 0.25 },
                   }}
+                  style={{ overflow: "hidden" }} // ⭐ IMPORTANTE
                 >
                   <motion.p
                     initial={{ opacity: 0 }}
