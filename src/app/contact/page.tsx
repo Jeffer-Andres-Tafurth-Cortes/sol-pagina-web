@@ -20,36 +20,43 @@ export default function Contact() {
     const mensaje = (form.elements.namedItem("mensaje") as HTMLTextAreaElement)
       .value;
 
+    // 🟡 Mensaje que se enviará a WhatsApp
     const texto = `
-📩 *Nuevo mensaje desde la web*
+📩 *Nuevo mensaje recibido desde la web*
 
-👤 Nombre: ${nombre} ${apellido}
-📞 Teléfono: ${telefono}
-📧 Email: ${email}
+👤 *Nombre:* ${nombre} ${apellido}
+📞 *Teléfono:* ${telefono}
+📧 *Email:* ${email}
 
-💬 Mensaje:
+💬 *Mensaje:*
 ${mensaje}
     `;
 
+    // Codificamos para URL
     const mensajeCodificado = encodeURIComponent(texto);
+
+    // Número al que llega el mensaje (en formato internacional)
     const numeroWhatsApp = "573232904786";
 
-    const esMovil =
-      /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-        navigator.userAgent
-      );
+    // Detecta si el usuario está en teléfono
+    const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+    // Construye la URL según dispositivo
     const url = esMovil
       ? `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`
       : `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
 
+    // Abre WhatsApp
     window.open(url, "_blank");
+
+    // Limpia el formulario si quieres
+    form.reset();
   };
 
   return (
     <section className={styles.contactSection}>
       <div className={styles.container}>
-        {/* Texto izquierdo con fade + desplazamiento suave */}
+        {/* Lado izquierdo con animación */}
         <motion.div
           className={styles.info}
           initial={{ opacity: 0, x: -25 }}
@@ -64,7 +71,7 @@ ${mensaje}
           </p>
         </motion.div>
 
-        {/* Formulario con animación independiente */}
+        {/* Formulario */}
         <motion.form
           className={styles.form}
           onSubmit={handleSubmit}
@@ -147,7 +154,6 @@ ${mensaje}
             </span>
           </div>
 
-          {/* Botón con hover animado */}
           <motion.button
             className={styles.ctaButton}
             type="submit"
