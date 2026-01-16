@@ -20,7 +20,6 @@ export default function Contact() {
     const mensaje = (form.elements.namedItem("mensaje") as HTMLTextAreaElement)
       .value;
 
-    // 🟡 Mensaje que se enviará a WhatsApp
     const texto = `
 📩 *Nuevo mensaje recibido desde la web*
 
@@ -32,31 +31,24 @@ export default function Contact() {
 ${mensaje}
     `;
 
-    // Codificamos para URL
     const mensajeCodificado = encodeURIComponent(texto);
-
-    // Número al que llega el mensaje (en formato internacional)
     const numeroWhatsApp = "573232904786";
 
-    // Detecta si el usuario está en teléfono
     const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // Construye la URL según dispositivo
     const url = esMovil
       ? `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`
-      : ` https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
+      : `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
 
-    // Abre WhatsApp
     window.open(url, "_blank");
-
-    // Limpia el formulario si quieres
     form.reset();
   };
 
   return (
     <section className={styles.contactSection}>
+      {/* BLOQUE SUPERIOR */}
       <div className={styles.container}>
-        {/* Lado izquierdo con animación */}
+        {/* TEXTO */}
         <motion.div
           className={styles.info}
           initial={{ opacity: 0, x: -25 }}
@@ -71,7 +63,7 @@ ${mensaje}
           </p>
         </motion.div>
 
-        {/* Formulario */}
+        {/* FORMULARIO */}
         <motion.form
           className={styles.form}
           onSubmit={handleSubmit}
@@ -85,88 +77,76 @@ ${mensaje}
           <div className={styles.row}>
             <div>
               <label htmlFor="nombre">Nombre*</label>
-              <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                required
-                placeholder="Ej: Juan"
-              />
+              <input id="nombre" name="nombre" type="text" required />
             </div>
 
             <div>
               <label htmlFor="apellido">Apellido*</label>
-              <input
-                id="apellido"
-                name="apellido"
-                type="text"
-                required
-                placeholder="Ej: Castañeda"
-              />
+              <input id="apellido" name="apellido" type="text" required />
             </div>
           </div>
 
           <div className={styles.row}>
             <div>
               <label htmlFor="telefono">Teléfono*</label>
-              <input
-                id="telefono"
-                name="telefono"
-                type="tel"
-                required
-                placeholder="Ej: 305 2991059"
-              />
+              <input id="telefono" name="telefono" type="tel" required />
             </div>
 
             <div>
               <label htmlFor="email">Email*</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="Ej: correo@email.com"
-              />
+              <input id="email" name="email" type="email" required />
             </div>
           </div>
 
           <div>
             <label htmlFor="mensaje">Mensaje*</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows={5}
-              required
-              placeholder="Quiero más información sobre..."
-            ></textarea>
+            <textarea id="mensaje" name="mensaje" rows={5} required />
           </div>
 
           <div className={styles.checkbox}>
-            <input type="checkbox" required />
-            <span>
+            <input id="privacy" type="checkbox" required />
+            <label htmlFor="privacy">
               Autorizo el uso de mis datos según la{" "}
               <a
                 href="https://sumapazvive.com/pages/terms/terms_and_conditions.php"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 política de privacidad
               </a>
-            </span>
+            </label>
           </div>
 
           <motion.button
             className={styles.ctaButton}
             type="submit"
-            whileHover={{
-              scale: 1.03,
-              boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
-            }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             Enviar
           </motion.button>
         </motion.form>
       </div>
+
+      {/* BLOQUE INFERIOR (MAPA) */}
+      <motion.div
+        className={styles.mapWrapper}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h3 className={styles.mapTitle}>Nuestra oficina</h3>
+
+        <div className={styles.mapContainer}>
+          <iframe
+            title="Ubicación oficina Pravice"
+            src="https://www.google.com/maps?q=Abogados%20Especialistas%20Pravice%20Bogot%C3%A1&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
