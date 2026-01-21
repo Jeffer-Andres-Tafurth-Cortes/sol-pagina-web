@@ -6,7 +6,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* CTA SUPERIOR */
+/* ================= CTA ================= */
 .cta {
   max-width: 1200px;
   margin: auto;
@@ -30,129 +30,108 @@
   margin-top: 5px;
 }
 
-/* Botón CTA */
 .ctaButton {
   border: 2px solid #ffffff;
-  color: #1a411a;
+  background: transparent;
+  color: #ffffff;
   padding: 12px 26px;
   font-size: 14px;
   letter-spacing: 1px;
-  text-decoration: none;
-  transition: all 0.3s ease;
   cursor: pointer;
+  transition: all 0.3s ease;
   margin-top: 15px;
-  white-space: nowrap;
 }
 
 .ctaButton:hover {
   background-color: #f7c600;
-  color: black;
+  color: #000;
 }
 
-/* CONTENIDO */
+/* ================= CONTENIDO ================= */
 .content {
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   padding: 40px 20px;
   gap: 30px;
 }
 
-/* COLUMNAS */
 .col {
   display: flex;
   flex-direction: column;
-  min-width: 0;
 }
 
-/* LOGO */
 .logo {
   width: 90px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
+  border-radius: 14px;
+  margin-bottom: 12px;
 }
 
-/* TEXTO */
 .text {
-  font-size: clamp(13px, 1vw, 14px);
+  font-size: 14px;
   color: #d0d0d0;
   line-height: 1.6;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
-/* TÍTULOS */
 .heading {
   font-size: 15px;
-  color: #ffffff;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
-/* LISTAS */
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.listItem {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #d0d0d0;
-  transition: color 0.2s ease;
-}
-
-.listItem:hover {
-  color: #f7c600;
-}
-
-/* REDES */
+/* ================= REDES SOCIALES ================= */
 .socials {
   display: flex;
   gap: 12px;
-  margin-top: 10px;
-  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
 .socialLink {
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   background-color: #2b585b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
-  font-size: 15px;
+
+  /* 🔑 CLAVE PARA CENTRAR ICONOS */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
   transition: all 0.3s ease;
-  cursor: pointer;
+}
+
+.socialLink svg {
+  width: 19px;
+  height: 19px;
 }
 
 .socialLink:hover {
   background-color: #f7c600;
-  color: black;
+  color: #000;
   transform: translateY(-3px);
 }
 
-/* HORARIO */
+/* ================= HORARIO ================= */
 .break {
   display: block;
 }
 
-/* BARRA INFERIOR */
+/* ================= BARRA INFERIOR ================= */
 .bottom {
   border-top: 1px solid #2b585b;
   margin-top: 30px;
   padding: 20px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .copy {
@@ -163,9 +142,7 @@
 
 .legal {
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 16px;
 }
 
 .legalLink {
@@ -179,57 +156,51 @@
   color: #f7c600;
 }
 
-/* BOTONES FIJOS */
+/* ================= BOTÓN WHATSAPP FIJO ================= */
 .fixedButtons {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   z-index: 1000;
 }
 
-/* Botón WhatsApp */
 .phoneBtn {
-  background-color: #ffffff;
-  border: 2px solid #25d366;
-  color: #25d366;
-  padding: 10px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  width: 46px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
+  border: 2px solid #25d366;
+  background-color: #ffffff;
+  color: #25d366;
+
+  /* 🔑 CENTRADO PERFECTO */
+  display: inline-flex;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
+  justify-content: center;
+
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.phoneBtn svg {
+  width: 22px;
+  height: 22px;
 }
 
 .phoneBtn:hover {
   background-color: #25d366;
   color: #ffffff;
-  border-color: #1a411a;
 }
 
 /* ================= RESPONSIVE ================= */
-
-/* TABLET */
 @media (max-width: 768px) {
-  .ctaTitle {
-    max-width: 100%;
+  .cta {
+    justify-content: center;
     text-align: center;
   }
 
-  .cta {
-    justify-content: center;
-  }
-
-  .ctaButton {
-    width: max-content;
-    margin: auto;
+  .ctaTitle {
+    max-width: 100%;
   }
 
   .bottom {
@@ -238,28 +209,20 @@
   }
 }
 
-/* MOBILE */
 @media (max-width: 480px) {
-  .fixedButtons {
-    bottom: 15px;
-    right: 15px;
-  }
-
   .phoneBtn {
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
   }
 
-  .cta {
-    padding: 0 15px 30px;
+  .socialLink {
+    width: 36px;
+    height: 36px;
   }
 
-  .content {
-    padding: 30px 15px;
-  }
-
-  .copy {
-    font-size: 12px;
+  .socialLink svg {
+    width: 16px;
+    height: 16px;
   }
 }

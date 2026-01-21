@@ -3,7 +3,7 @@
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -55,12 +55,18 @@ export default function Footer() {
             <a
               className={styles.socialLink}
               href="https://www.instagram.com/pravice_abogados/"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              target="_blank"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
               className={styles.socialLink}
               href="https://www.facebook.com/praviceabogadosespecializados"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              target="_blank"
             >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
@@ -69,43 +75,20 @@ export default function Footer() {
               href="https://www.tiktok.com/@pravice_abogados"
               rel="noopener noreferrer"
               aria-label="TikTok"
+              target="_blank"
             >
               <FontAwesomeIcon icon={faTiktok} />
             </a>
             <a
               className={styles.socialLink}
               href="https://co.linkedin.com/company/praviceabogadosespecializados"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              target="_blank"
             >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </div>
-        </div>
-
-        {/* ENLACES */}
-        <div className={styles.col}>
-          <h4 className={styles.heading}>ENLACES RÁPIDOS</h4>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>Inicio</li>
-            <li className={styles.listItem}>Nosotros</li>
-            <li className={styles.listItem}>Blog</li>
-            <li className={styles.listItem}>Contacto</li>
-            <li className={styles.listItem}>Paga aquí</li>
-          </ul>
-        </div>
-
-        {/* ÁREAS */}
-        <div className={styles.col}>
-          <h4 className={styles.heading}>NUESTRAS ÁREAS</h4>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>Asuntos Comerciales</li>
-            <li className={styles.listItem}>Asuntos Civiles</li>
-            <li className={styles.listItem}>Asuntos Laborales</li>
-            <li className={styles.listItem}>Copropiedad</li>
-            <li className={styles.listItem}>Custodia y Visitas</li>
-            <li className={styles.listItem}>Alimentos para Menores</li>
-            <li className={styles.listItem}>Asuntos Vecinales</li>
-            <li className={styles.listItem}>Liquidación Sociedad Conyugal</li>
-          </ul>
         </div>
 
         {/* CONTACTO */}
@@ -143,7 +126,7 @@ export default function Footer() {
       {/* BARRA FINAL */}
       <div className={styles.bottom}>
         <p className={styles.copy}>
-          © 2025 SOL Centro de Conciliación y Arbitraje. Todos los derechos
+          © 2026 SOL Centro de Conciliación y Arbitraje. Todos los derechos
           reservados.
         </p>
 
