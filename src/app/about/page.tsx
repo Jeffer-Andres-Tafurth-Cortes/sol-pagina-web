@@ -6,7 +6,7 @@ import styles from "./About.module.css";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -32,7 +32,9 @@ export default function About() {
           <span className={styles.role}>Abogado</span>
 
           <p className={styles.description}>
-            Abogado egresado de la Universidad del Rosario ...
+            Abogado con experiencia en resolución de conflictos y acompañamiento
+            jurídico estratégico, enfocado en brindar soluciones claras,
+            eficientes y ajustadas a la normativa vigente.
           </p>
 
           <motion.button
@@ -51,7 +53,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <img src="/doc-harrison.jpg" alt="Dr Harrison" />
+          <img src="/doc-harrison.jpg" alt="Dr. Harrison Calderon, abogado" />
         </motion.div>
       </motion.div>
 
@@ -70,7 +72,10 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <img src="/doc-leidy.jpg" alt="Dra Leidy" />
+          <img
+            src="/doc-leidy.jpg"
+            alt="Dra. Leidy Tirado, abogada y conciliadora"
+          />
         </motion.div>
 
         <motion.div
@@ -84,8 +89,9 @@ export default function About() {
           <span className={styles.role}>CCO & Abogada</span>
 
           <p className={styles.description}>
-            Abogada y conciliadora en derecho, formada en la Universidad
-            Militar, especializada en la gestión profesional de conflictos...
+            Abogada y conciliadora en derecho, con enfoque en la gestión
+            profesional de conflictos y la construcción de acuerdos efectivos
+            mediante procesos ágiles y confiables.
           </p>
 
           <motion.button
@@ -117,7 +123,9 @@ export default function About() {
           <span className={styles.role}>CCO & Abogada</span>
 
           <p className={styles.description}>
-            Abogado egresado de la Universidad del Rosario ...
+            Abogada con experiencia en conciliación y resolución alternativa de
+            conflictos, orientada a ofrecer acompañamiento jurídico ético, claro
+            y oportuno.
           </p>
 
           <motion.button
@@ -136,7 +144,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <img src="/doc-angie.jpg" alt="Dra. Angie" />
+          <img src="/doc-angie.jpg" alt="Dra. Angie Rivera, abogada" />
         </motion.div>
       </motion.div>
     </section>
