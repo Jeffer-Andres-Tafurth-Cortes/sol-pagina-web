@@ -11,20 +11,54 @@ type BlogItem = {
 
 const faqData: BlogItem[] = [
   {
+    question: "¿Qué es la conciliación extrajudicial en derecho?",
+    answer:
+      "Es un mecanismo alternativo de solución de conflictos mediante el cual las partes, con la ayuda de un conciliador neutral, buscan llegar a un acuerdo voluntario sin acudir a un proceso judicial, ahorrando tiempo, costos y desgaste emocional.",
+  },
+  {
+    question: "¿Qué tipo de conflictos se pueden conciliar?",
+    answer:
+      "Se pueden conciliar asuntos civiles, comerciales, laborales, de familia, copropiedad y convivencia, siempre que la ley lo permita y las partes tengan capacidad para disponer del derecho en conflicto.",
+  },
+  {
+    question: "¿Los acuerdos logrados en conciliación tienen validez legal?",
+    answer:
+      "Sí. El acta de conciliación presta mérito ejecutivo y hace tránsito a cosa juzgada, lo que significa que el acuerdo es obligatorio y puede exigirse legalmente en caso de incumplimiento.",
+  },
+  {
+    question: "¿Cuándo conviene acudir a conciliación en lugar de un juicio?",
+    answer:
+      "Cuando se busca una solución rápida, confidencial y menos costosa. La conciliación es ideal para preservar relaciones comerciales, familiares o laborales, evitando procesos largos y desgastantes.",
+  },
+  {
     question: "¿Qué incluye la asesoría en asuntos comerciales?",
     answer:
-      "Revisión y redacción de contratos de compraventa, distribución, agencia y prestación de servicios; gestión de incumplimientos, cobros, garantías y negociación con clientes o proveedores; uso de mecanismos alternativos de solución de controversias para cerrar disputas con eficiencia.",
+      "Incluye análisis de contratos, manejo de incumplimientos, cobros de obligaciones, negociación entre empresas y acompañamiento en conciliaciones para resolver disputas comerciales de forma estratégica.",
   },
   {
-    question:
-      "¿Cuándo conviene usar conciliación o arbitraje en un conflicto comercial?",
+    question: "¿Se pueden conciliar conflictos laborales?",
     answer:
-      "Cuando se busca una salida más rápida y reservada que el proceso judicial. La conciliación facilita acuerdos voluntarios y ejecutables; el arbitraje concluye con un laudo con fuerza de sentencia. Elegimos el mecanismo según la cláusula pactada y el objetivo del negocio.",
+      "Sí. Muchos conflictos laborales pueden resolverse mediante conciliación, como liquidaciones, pagos pendientes o terminación de contratos, siempre respetando los derechos mínimos del trabajador.",
   },
   {
-    question: "¿Qué cláusulas son clave en un contrato comercial?",
+    question: "¿Cómo se manejan los temas de familia en conciliación?",
     answer:
-      "Objeto y alcance, precio y pagos, plazos de entrega, estándares de calidad, garantías, limitación de responsabilidad, confidencialidad, protección de datos, propiedad intelectual, solución de controversias, terminación anticipada y penalidades por incumplimiento.",
+      "Se abordan con especial cuidado temas como alimentos, custodia, régimen de visitas y acuerdos familiares, priorizando siempre el interés superior de los menores y el bienestar de las partes.",
+  },
+  {
+    question: "¿Qué pasa si una de las partes no cumple el acuerdo?",
+    answer:
+      "El acta de conciliación permite iniciar un proceso ejecutivo para exigir el cumplimiento del acuerdo, sin necesidad de volver a discutir el fondo del conflicto.",
+  },
+  {
+    question: "¿Es obligatoria la conciliación antes de demandar?",
+    answer:
+      "En muchos casos sí. La conciliación extrajudicial es un requisito de procedibilidad antes de acudir a la vía judicial, dependiendo del tipo de proceso y la materia.",
+  },
+  {
+    question: "¿Cómo puedo agendar una asesoría o iniciar un proceso?",
+    answer:
+      "Actualmente, todas las solicitudes de asesoría e inicio de procesos se realizan directamente a través de WhatsApp, donde recibirás atención personalizada y orientación inicial.",
   },
 ];
 
@@ -70,7 +104,9 @@ export default function Blog() {
         <h3 className={styles.subtitle}>
           Tus preguntas, respondidas con claridad
         </h3>
-        <h2 className={styles.heading}>PREGUNTAS FRECUENTES</h2>
+        <h2 className={styles.heading}>
+          Preguntas frecuentes sobre conciliación y arbitraje
+        </h2>
       </motion.div>
 
       <motion.div
