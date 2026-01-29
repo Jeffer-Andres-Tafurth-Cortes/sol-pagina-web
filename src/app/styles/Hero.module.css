@@ -69,14 +69,6 @@
   opacity: 0.92;
 }
 
-.finalPhrase {
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  margin-top: 1rem;
-  margin-bottom: 1.8rem;
-  font-weight: 500;
-  opacity: 0.95;
-}
-
 /* ============================
    BOTÓN CTA
 ============================ */

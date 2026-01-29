@@ -6,7 +6,7 @@ import styles from "../styles/Hero.module.css";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -24,27 +24,26 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h1 className={styles.mainTitle}>
-          SOL Centro de Conciliación y Arbitraje
+          SOL Centro de Conciliación y Arbitraje en Colombia
         </h1>
 
         <p className={styles.paragraph}>
-          En SOL ofrecemos soluciones legales ágiles y efectivas para resolver
-          tus conflictos mediante conciliación y arbitraje. Nuestro equipo de
-          profesionales te acompaña en cada etapa del proceso para alcanzar
-          acuerdos justos y duraderos.
+          En <strong>SOL Centro de Conciliación y Arbitraje</strong> ofrecemos
+          soluciones legales ágiles y efectivas para la{" "}
+          <strong>resolución alternativa de conflictos</strong> a través de la
+          conciliación extrajudicial y el arbitraje. Acompañamos a personas y
+          empresas en la búsqueda de acuerdos justos, eficientes y legalmente
+          respaldados.
         </p>
 
-        {/**
-         * 
-        <p className={styles.finalPhrase}>
-          No dejes tu caso en manos de cualquiera.
-          <br />
-          <strong>Déjalo en manos de especialistas.</strong>
+        <p className={styles.paragraph}>
+          Nuestro equipo de profesionales especializados te asesora durante cada
+          etapa del proceso, garantizando seguridad jurídica, confidencialidad y
+          un enfoque práctico orientado a resultados.
         </p>
-        */}
 
         <button className={styles.ctaButton} onClick={handleClick}>
-          PROGRAME UNA CONSULTA
+          Consulta legal por WhatsApp
         </button>
       </motion.div>
     </section>

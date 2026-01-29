@@ -1,12 +1,5 @@
 "use client";
 
-const handleClick = () => {
-  window.open(
-    "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
-    "_blank",
-  );
-};
-
 import styles from "../styles/Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -22,69 +15,90 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/send/?phone=573232904786&text&type=phone_number&app_absent=0",
+    "_blank",
+  );
+};
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       {/* CTA SUPERIOR */}
       <div className={styles.cta}>
         <h2 className={styles.ctaTitle}>
-          ¿Necesitas asesoramiento legal?
+          Asesoría en conciliación y arbitraje
           <span className={styles.ctaHighlight}>
-            Confía en Sol Centro de Arbitraje y Conciliación.
+            en SOL Centro de Conciliación y Arbitraje
           </span>
         </h2>
 
-        <button className={styles.ctaButton} onClick={handleClick}>
-          PROGRAME UNA CITA
+        <button
+          className={styles.ctaButton}
+          onClick={handleClick}
+          aria-label="Agendar consulta legal por WhatsApp"
+        >
+          Consulta legal por WhatsApp
         </button>
       </div>
 
       {/* CONTENIDO PRINCIPAL */}
       <div className={styles.content}>
-        {/* LOGO */}
+        {/* LOGO Y DESCRIPCIÓN */}
         <div className={styles.col}>
-          <img src="/logo_sol.jpg" alt="Logo Sol" className={styles.logo} />
+          <img
+            src="/logo_sol.jpg"
+            alt="SOL Centro de Conciliación y Arbitraje"
+            className={styles.logo}
+          />
+
           <p className={styles.text}>
-            En SOL brindamos seguridad jurídica y resolución pacífica de
-            conflictos a personas y empresas.
+            <strong>SOL Centro de Conciliación y Arbitraje</strong> es una
+            entidad especializada en la resolución alternativa de conflictos
+            mediante conciliación extrajudicial y arbitraje, brindando seguridad
+            jurídica a personas y empresas en Colombia.
           </p>
 
-          <h4 className={styles.heading}>REDES SOCIALES</h4>
+          <h4 className={styles.heading}>Síguenos en redes sociales</h4>
 
           <div className={styles.socials}>
             <a
               className={styles.socialLink}
               href="https://www.instagram.com/pravice_abogados/"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram SOL Centro de Conciliación y Arbitraje"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
+
             <a
               className={styles.socialLink}
               href="https://www.facebook.com/praviceabogadosespecializados"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook SOL Centro de Conciliación y Arbitraje"
             >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
+
             <a
               className={styles.socialLink}
               href="https://www.tiktok.com/@pravice_abogados"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok SOL Centro de Conciliación y Arbitraje"
             >
               <FontAwesomeIcon icon={faTiktok} />
             </a>
+
             <a
               className={styles.socialLink}
               href="https://co.linkedin.com/company/praviceabogadosespecializados"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn SOL Centro de Conciliación y Arbitraje"
             >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
@@ -93,14 +107,17 @@ export default function Footer() {
 
         {/* CONTACTO */}
         <div className={styles.col}>
-          <h4 className={styles.heading}>DETALLES DE CONTACTO</h4>
+          <h4 className={styles.heading}>Información de contacto</h4>
+
           <p className={styles.text}>
-            <FontAwesomeIcon icon={faLocationDot} /> Calle 98 no. 22 - 64
-            Oficina 716
+            <FontAwesomeIcon icon={faLocationDot} /> Calle 98 No. 22-64, Oficina
+            716, Colombia
           </p>
+
           <p className={styles.text}>
             <FontAwesomeIcon icon={faPhone} /> +57 323 290 4786
           </p>
+
           <p className={styles.text}>
             <FontAwesomeIcon icon={faEnvelope} />{" "}
             comercial@solcentrodeconciliacion.com
@@ -109,16 +126,16 @@ export default function Footer() {
 
         {/* HORARIO */}
         <div className={styles.col}>
-          <h4 className={styles.heading}>HORARIO</h4>
+          <h4 className={styles.heading}>Horario de atención</h4>
+
           <p className={styles.text}>
             Lunes a viernes
-            <br className={styles.break} />
-            8:00 am a 6:00 pm
+            <br /> 8:00 a.m. – 6:00 p.m.
           </p>
+
           <p className={styles.text}>
             Sábados
-            <br className={styles.break} />
-            8:00 am a 1:00 pm
+            <br /> 8:00 a.m. – 1:00 p.m.
           </p>
         </div>
       </div>
@@ -131,17 +148,21 @@ export default function Footer() {
         </p>
 
         <div className={styles.legal}>
-          <a className={styles.legalLink}>Política de Privacidad</a>
-          <a className={styles.legalLink}>Términos y Condiciones</a>
+          <a href="/politica-privacidad" className={styles.legalLink}>
+            Política de Privacidad
+          </a>
+          <a href="/terminos-condiciones" className={styles.legalLink}>
+            Términos y Condiciones
+          </a>
         </div>
       </div>
 
-      {/* Botón fijo de WhatsApp */}
+      {/* BOTÓN FIJO WHATSAPP */}
       <div className={styles.fixedButtons}>
         <button
           className={styles.phoneBtn}
-          aria-label="Llamar"
           onClick={handleClick}
+          aria-label="Contactar por WhatsApp a SOL Centro de Conciliación y Arbitraje"
         >
           <FontAwesomeIcon icon={faWhatsapp} />
         </button>
